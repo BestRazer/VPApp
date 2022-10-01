@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1001358638925",
+    "firebase_url": "https://vp-app-e0bc3.firebaseio.com",
+    "project_id": "vp-app-e0bc3",
+    "storage_bucket": "vp-app-e0bc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001358638925:android:9d0477e651a22e0e014104",
+        "android_client_info": {
+          "package_name": "de.arthurlehniger.vp_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001358638925-5po1k395veqg7phf5gbposjv9ejq3o5a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKo0txLAhpcZ1KLAGtDELflFxVwc12Y5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001358638925-5po1k395veqg7phf5gbposjv9ejq3o5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
