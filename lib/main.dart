@@ -40,7 +40,7 @@ class _VPMontagState extends State<VPMontag> {
       ),
       body: FutureBuilder(
         future:
-            PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/vpmo.pdf'),
+            PDFDocument.fromURL('http://serverurl/vp/vpmo.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return mload();
@@ -98,7 +98,7 @@ class _VPDienstagState extends State<VPDienstag> {
       ),
       body: FutureBuilder(
         future:
-            PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/vpdi.pdf'),
+            PDFDocument.fromURL('http://serverurl/vp/vpdi.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return mload();
@@ -155,7 +155,7 @@ class _VPMittwochState extends State<VPMittwoch> {
       ),
       body: FutureBuilder(
         future:
-            PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/vpmi.pdf'),
+            PDFDocument.fromURL('http://serverurl/vp/vpmi.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return mload();
@@ -213,7 +213,7 @@ class _VPDonnerstagState extends State<VPDonnerstag> {
       ),
       body: FutureBuilder(
         future:
-            PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/vpdo.pdf'),
+            PDFDocument.fromURL('http://serverurl/vp/vpdo.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return mload();
@@ -271,7 +271,7 @@ class _VPFreitagState extends State<VPFreitag> {
       ),
       body: FutureBuilder(
         future:
-            PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/vpfr.pdf'),
+            PDFDocument.fromURL('http://serverurl/vp/vpfr.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return mload();
@@ -366,7 +366,7 @@ class _LehrerState extends State<Lehrer> {
         title: Text('Lehrerkürzel'),
       ),
       body: FutureBuilder(
-        future: PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/lk.pdf'),
+        future: PDFDocument.fromURL('http://serverurl/vp/lk.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return lkload();
@@ -421,7 +421,7 @@ class _FahrtenkonzeptState extends State<Fahrtenkonzept> {
         title: Text('Fahrtenkonzept'),
       ),
       body: FutureBuilder(
-        future: PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/fk.pdf'),
+        future: PDFDocument.fromURL('http://serverurl/vp/fk.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return fkload();
@@ -476,7 +476,7 @@ class _HausordnungState extends State<Hausordnung> {
         title: Text('Hausordnung'),
       ),
       body: FutureBuilder(
-        future: PDFDocument.fromURL('http://arthursapps.bplaced.net/vp/ho.pdf'),
+        future: PDFDocument.fromURL('http://serverurl/vp/ho.pdf'),
         builder: (_, pdfData) {
           if (pdfData.connectionState == ConnectionState.waiting) {
             return hoload();
@@ -741,7 +741,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static downloadFile(String url) async {
     var request = await HttpClient()
-        .getUrl(Uri.parse('http://arthursapps.bplaced.net/apk/vpapp.apk'));
+        .getUrl(Uri.parse('http://serverurl/apk/vpapp.apk'));
     var response = await request.close();
     var bytes = await consolidateHttpClientResponseBytes(response);
     Directory appDocDir = await getApplicationDocumentsDirectory();
@@ -765,7 +765,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _launchURL() async {
-    const url = 'http://arthursapps.bplaced.net/apk/vpapp.apk';
+    const url = 'http://serverurl/apk/vpapp.apk';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -791,7 +791,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void share(BuildContext context) {
     final RenderBox box = context.findRenderObject();
     final String text =
-        "VP App - Vertretungsplan ohne Login und Download hier herunterladen: http://arthursapps.bplaced.net/html/vpapp.html";
+        "VP App - Vertretungsplan ohne Login und Download hier herunterladen: http://serverurl/html/vpapp.html";
 
     Share.share(text,
         subject: 'VP App - Vertretungsplan ohne Login und Download');
@@ -892,7 +892,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 630,
             child: FutureBuilder(
               future: PDFDocument.fromURL(
-                  'http://arthursapps.bplaced.net/vp/stundenplan.pdf'),
+                  'http://serverurl/vp/stundenplan.pdf'),
               builder: (_, pdfData) {
                 if (pdfData.connectionState == ConnectionState.waiting) {
                   return mload();
@@ -952,7 +952,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static const APP_STORE_URL =
       'https://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftwareUpdate?id=YOUR-APP-ID&mt=8';
   static const PLAY_STORE_URL =
-      'http://arthursapps.bplaced.net/apk/vpapp.apk';
+      'http://serverurl/apk/vpapp.apk';
 
   versionCheck(context) async {
     //Get Current installed version of app
